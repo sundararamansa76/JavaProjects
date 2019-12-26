@@ -1,9 +1,0 @@
-package com.hare.krsna;
-
-import java.util.ArrayList;
-import java.util.List;
-
-public class CompImpl {
-
-	List<String> arrList = new ArrayList<String>(List.of("Krsna", "Radhe", "Balarama", "Acyuta"));
-}

@@ -1,9 +1,0 @@
-package com.hare.krsna.pkg1;
-
-import com.hare.krsna.pkg2.ExampleClass;
-
-public class ExampleRunnerClass {
-	public static void main(String[] args) {
-		EampleClass ex1 = new ExampleClass();
-	}
-}

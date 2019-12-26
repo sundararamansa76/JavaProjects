@@ -1,9 +1,0 @@
-package com.hare.krsna;
-
-public class Counter {
-	int i =0;
-	public void increment()
-	{
-		i = i + 2;
-	}
-}
