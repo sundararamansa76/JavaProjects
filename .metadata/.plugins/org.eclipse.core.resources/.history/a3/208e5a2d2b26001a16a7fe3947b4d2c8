@@ -1,0 +1,13 @@
+package com.hare.krsna.pkg1;
+
+import com.hare.krsna.pkg2.ExampleClass;
+
+public class ExampleRunnerClass extends ExampleClass {
+	public static void main(String[] args) {
+		ExampleRunnerClass ex1 = new ExampleRunnerClass();
+		ex1.protM();
+		ex1.pubM();
+	
+
+	}
+}

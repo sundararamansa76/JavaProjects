@@ -1,0 +1,16 @@
+package com.hare.krsna.mockitodemo;
+
+public class BusinessIMpl {
+
+	private DataService dataService;
+
+	int findTheGreatestFromAllData() {
+		int[] data = this.dataService.getAlLService();
+		int g8st = Integer.MIN_VALUE;
+	}
+
+}
+
+interface DataService {
+	int[] getAlLService();
+}

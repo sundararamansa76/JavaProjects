@@ -1,0 +1,21 @@
+package com.hare.krsna.pkg2;
+
+final class FinalClass {
+
+}
+
+class SomeClass {
+
+	final public void runner() {
+		System.out.println("Run HK");
+	}
+}
+
+public class FinalNonAccessRunner {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

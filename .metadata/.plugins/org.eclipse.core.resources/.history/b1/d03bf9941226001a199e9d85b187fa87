@@ -1,0 +1,9 @@
+package com.hare.krsna.mockitodemo;
+
+public class BusinessIMpl {
+
+}
+
+interface DataService {
+	int[] getAlLService;
+}

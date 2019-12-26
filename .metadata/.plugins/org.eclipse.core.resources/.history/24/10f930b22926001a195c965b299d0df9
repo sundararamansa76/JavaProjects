@@ -1,0 +1,11 @@
+package com.hare.krsna.pkg2;
+
+public class ClassAccessModifiersInAotherPk {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		ClassAccessModifiersInAotherPk c = new ClassAccessModifiersInAotherPk();
+
+	}
+
+}

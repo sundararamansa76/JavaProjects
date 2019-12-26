@@ -1,0 +1,6 @@
+package com.hare.krsna.restfulwebservices1;
+
+@Component
+public class UserDaoService {
+
+}

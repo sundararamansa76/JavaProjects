@@ -1,0 +1,11 @@
+package com.hare.krsna;
+
+import org.junit.jupiter.api.Test;
+
+class MyMathTest {
+
+	@Test
+	void test() {
+	}
+
+}

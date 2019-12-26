@@ -1,0 +1,26 @@
+package com.hare.krsna.pkg2;
+
+
+class DefaultClass {
+	
+}
+
+public class NestedClassRnner {
+	class InnerClass {
+
+	}
+
+
+	static class StaticNestedClass {
+
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		DefaultClass dc = new DefaultClass();
+		NestedClassRnner ic = dc.new NestedClassRnner();
+		StaticNestedClass staticNestedClass = new StaticNestedClass();
+
+	}
+
+}

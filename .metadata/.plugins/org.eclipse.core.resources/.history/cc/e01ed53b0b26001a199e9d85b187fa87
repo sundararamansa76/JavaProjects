@@ -1,0 +1,13 @@
+package com.hare.krsna;
+
+public class MyMath {
+	int sum;(
+	int[] nums)
+	{
+		int sum;
+		for (int i : this.nums) {
+			sum += i;
+		}
+
+	}
+}

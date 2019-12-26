@@ -1,0 +1,15 @@
+package com.hare.krsna;
+
+enum Seasons {
+	WINTER, SPRING, SUMMER, FALL;
+}
+
+public class EnumRunner {
+
+	public static void main(String[] args) {
+		Seasons s1 = Seasons.WINTER;
+		System.out.println(s1);
+
+	}
+
+}

@@ -1,0 +1,11 @@
+package com.hare.krsna;
+
+public class DirectoryScanner {
+
+	public static void main(String[] args) {
+		
+		Paths.get(".")
+
+	}
+
+}

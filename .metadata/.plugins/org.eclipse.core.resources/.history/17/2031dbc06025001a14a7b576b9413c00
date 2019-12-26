@@ -1,0 +1,12 @@
+package com.hare.krsna.restfulwebservices1;
+
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class HelloWorldController {
+	// GET
+
+	// URI - / hello-world
+	// method - Hello World
+
+}

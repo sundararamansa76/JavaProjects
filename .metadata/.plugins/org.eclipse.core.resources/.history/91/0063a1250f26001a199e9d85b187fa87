@@ -1,0 +1,19 @@
+package com.hare.krsna;
+
+import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.Test;
+
+class AssetTest {
+
+	@Test
+	void test() {
+		assertEquals(1, 2);
+		int i =2;
+		assertTrue(if(i==2) {
+			truye
+		});
+	}
+
+}

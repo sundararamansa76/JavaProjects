@@ -1,0 +1,7 @@
+package com.hare.krsna;
+
+public class CompImpl {
+
+	List<String> arrList = new ArrayList<String>(List.of("Krsna", "Radhe", "Balarama", "Acyuta"));
+	
+}

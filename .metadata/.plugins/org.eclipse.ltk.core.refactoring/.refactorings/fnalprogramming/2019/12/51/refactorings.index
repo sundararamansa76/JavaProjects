@@ -1,0 +1,3 @@
+1576490428050	Extract method 'normalSum'
+1576496126046	Extract method 'sumOfIntFP'
+1576496228086	Inline local variable 'sum'

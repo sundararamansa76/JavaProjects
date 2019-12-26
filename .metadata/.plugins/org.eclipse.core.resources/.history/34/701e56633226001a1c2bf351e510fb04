@@ -1,0 +1,17 @@
+package com.hare.krsna.pkg2;
+
+final class FinalClass {
+
+}
+
+class SomeClass extends FinalClass {
+
+}
+public class FinalNonAccessRunner {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

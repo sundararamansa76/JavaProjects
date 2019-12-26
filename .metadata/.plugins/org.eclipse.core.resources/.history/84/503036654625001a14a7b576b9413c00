@@ -1,0 +1,10 @@
+package com.hare.krsna.springin5steps.scope;
+
+public class XMLJdbcConn {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("IN XML JDBC Conn");
+	}
+
+}

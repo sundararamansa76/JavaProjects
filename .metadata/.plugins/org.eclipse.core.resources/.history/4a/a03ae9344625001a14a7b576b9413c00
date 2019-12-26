@@ -1,0 +1,32 @@
+package com.hare.krsna.springin5steps.scope;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
+public class XMLPersonalDAO {
+	/**
+	 * @return the jdbccon
+	 */
+	public XMLJdbcConn getJdbccon() {
+		return jdbccon;
+	}
+
+
+	/**
+	 * @param jdbccon the jdbccon to set
+	 */
+	public void setJdbccon(XMLJdbcConn jdbccon) {
+		this.jdbccon = jdbccon;
+	}
+
+
+	@Autowired
+	XMLJdbcConn jdbccon;
+
+
+	public void setJdbccon(XMLJdbcConn jdbccon) {
+		this.jdbccon = jdbccon;
+	}
+
+}

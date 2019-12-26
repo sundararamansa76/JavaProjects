@@ -1,0 +1,38 @@
+package com.hare.krsna.springin5steps;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
+
+import com.hare.krsna.springin5steps.scope.PersonalDAO;
+import com.hare.rama.spring.basics.compscan.ComponentDAO;
+
+
+
+
+@SpringBootApplication
+public class SpringIn5StepsScopeApplication {
+
+
+	//binSearch1.binarySearch(new int[] {12,4,3,5},3);
+
+	private static Logger LOGGER = LoggerFactory.getLogger(SpringIn5StepsScopeApplication.class);
+
+	public static void main(String[] args) {
+
+		ApplicationContext applicationContext = SpringApplication.run(SpringIn5StepsScopeApplication.class, args);
+		// BinarySearchImpl bins = applicationContext.getBean(BinarySearchImpl.class);
+		ComponentDAO pDao = applicationContext.getBean(ComponentDAO.class);
+		PersonalDAO pDao2 = applicationContext.getBean(PersonalDAO.class);
+		LOGGER.info("{}", pDao);
+		LOGGER.info("{}", pDao.getJdbccon());
+
+		LOGGER.info("{}", pDao2);
+		LOGGER.info("{}", pDao2.getJdbccon());
+
+	}
+
+
+}

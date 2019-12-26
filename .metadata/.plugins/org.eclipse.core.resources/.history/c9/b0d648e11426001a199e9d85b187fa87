@@ -1,0 +1,14 @@
+package com.hare.krsna.mockitodemo;
+
+import org.junit.jupiter.api.Test;
+
+class BusinessIMplTest {
+
+	@Test
+	void testFindTheGreatestFromAllData() {
+		// fail("Not yet implemented");
+		BusinessIMpl busImpl = new BusinessIMpl();
+		busImpl.findTheGreatestFromAllData();
+	}
+
+}

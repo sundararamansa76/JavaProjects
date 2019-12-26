@@ -1,0 +1,10 @@
+package com.hare.krsna;
+
+public class PalindromeRunner {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,12 @@
+package com.hare.krsna.springin5steps.cdi;
+
+import org.springframework.stereotype.Component;
+
+@Named
+public class CdiBusDao {
+
+	public void CdiBusDao() {
+		System.out.println("In CDIBUS DAO");
+	}
+
+}

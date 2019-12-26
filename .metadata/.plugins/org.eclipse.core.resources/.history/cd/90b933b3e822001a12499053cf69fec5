@@ -1,0 +1,5 @@
+package com.hare.krsna.springin5steps.cdi;
+
+public class CdiBusDao {
+
+}
