@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 @RestController
-public class UserResource {
+public class UserController {
 	// GET/usrs
 	@Autowired
 	private UserDaoService userDao;
@@ -26,7 +26,10 @@ public class UserResource {
 
 	@GetMapping("/users/{id}")
 	public User retrieveUser(@PathVariable int id) {
-		return this.userDao.getUser(id);
+		User user = this.userDao.getUser(id);
+		if (user ==null)
+			throw new UserNotFoundException("Id-"+id);
+		return user;
 	}
 
 
