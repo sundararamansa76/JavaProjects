@@ -15,15 +15,13 @@ import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.context.annotation.Primary;
 
 @Entity
-@NamedQuery(name="query_get_all_courses", query="Select c from Course c")
-@Table(name="CourseDetails")
-public class Course {
+public class Student {
 	
 	@Id
 	@GeneratedValue
 	private Long id;
 	
-	protected Course() {}
+	protected Student() {}
 	
 	public Long getId() {
 		return id;
@@ -46,14 +44,14 @@ public class Course {
 		this.name = name;
 	}
 
-	public Course(String name)
+	public Student(String name)
 	{
 		this.name = name;
 	}
 
 	@Override
 	public String toString() {
-		return "Course [id=" + id + ", name=" + name + "]";
+		return "Student [id=" + id + ", name=" + name + "]";
 	}
 	
 	

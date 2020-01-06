@@ -27,6 +27,12 @@ public class JpaHibExApplication implements CommandLineRunner {
 		Course course = repo.findById(10001l);
 		LOGGER.info("Course 10001 is {}", course);
 		LOGGER.info("Successfully implemented JPA with H2");
+		repo.deleteById(10001l);
+		LOGGER.info("Deleted a record");
+		repo.save(new Course("Hare Krsna"));
+		Course course2 = new Course("Hari Hari Hari Bol!!!");
+		repo.save(course2);
+		repo.playwithEM();
 	}
 
 }

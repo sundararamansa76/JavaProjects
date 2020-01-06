@@ -3,6 +3,13 @@ package com.hare.krsna.JPAHibEx.repository;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.Query;
+import javax.persistence.TypedQuery;
+import javax.transaction.Transactional;
+
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
@@ -19,62 +26,47 @@ import com.hare.krsna.JPAHibEx.repository.CourseRespository;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes=JpaHibExApplication.class)
-class CourseRepoTest{
+class NativeQueriesTest{
 
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 	
 	@Autowired
-	CourseRespository courseRepo;
+	EntityManager em;
 	
 	@Test
-	public void findByIdBasicTet() {
-		
+	public void nativeQueries() {
+		Query query = em.createNativeQuery("Select * from Course_Details", Course.class);
 		logger.info("Test is starting");
-		Course course = courseRepo.findById(10002l);
-		assertEquals("Hare Rama", course.getName());
-		
+		List resultList = query.getResultList();
+			
 		logger.info("Test ran successfully");
+		logger.info(" { } ", resultList);
+	}
+	
+		
+	@Test
+	public void nativeQueries_with_params() {
+		Query query = em.createNativeQuery("Select * from Course_Details where id = :id", Course.class);
+		query.setParameter("id",10002l);
+		logger.info("Test is starting");
+		List resultList = query.getResultList();
+			
+		logger.info("Test ran successfully");
+		logger.info(" { } ", resultList);
 	}
 	
 	@Test
-	@DirtiesContext
-	public void deleteByIdTet() {
+	@Transactional
+	public void updateDate() {
+		Query query = em.createNativeQuery("Update COURSE set last_updated_date=sysdate()", Course.class);
+		logger.info("Test is starting");
 		
-		logger.info("Deletion is starting");
-		courseRepo.deleteById(10002l);
-		
-		assertNull(courseRepo.findById(10002l));
-		
-		logger.info("Test ran successfully");
-	}
-	
-	@Test
-	@DirtiesContext
-	public void save() {
-		
-		logger.info("Save Test is starting");
-		Course course = courseRepo.findById(10003l);
-		
-		if(course !=null) {
-			course.setName("Hari Hari  bol!!!");;
-		courseRepo.save(course);
-		}
-		
-		assertEquals("Hari Hari  bol!!!", course.getName());
-		
-		
-		logger.info("Test ran successfully");
-	}
-	
-	@Test
-	@DirtiesContext
-	public void playwithEM() {
-		
-		logger.info("Playing with EM Test is starting");
-		courseRepo.playwithEM();	
-		
-		logger.info("Test ran successfully");
-	}
+			
+		int noOfRowsUpdated = query.executeUpdate();
 
+		logger.info("ROWS UDPATED: :: { }", noOfRowsUpdated);
+		
+	}
+	
 	
 }

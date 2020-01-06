@@ -15,22 +15,20 @@ import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.context.annotation.Primary;
 
 @Entity
-@NamedQuery(name="query_get_all_courses", query="Select c from Course c")
-@Table(name="CourseDetails")
-public class Course {
+public class Passport {
 	
 	@Id
 	@GeneratedValue
 	private Long id;
 	
-	protected Course() {}
+	protected Passport() {}
 	
 	public Long getId() {
 		return id;
 	}
 
 	@Column(nullable=false)
-	private String name;
+	private String number;
 	
 	@UpdateTimestamp
 	private LocalDateTime lastUpdatedDate;
@@ -38,22 +36,18 @@ public class Course {
 	@CreationTimestamp
 	private LocalDateTime createdDate;
 	
-	public String getName() {
-		return name;
+	public String getNumber() {
+		return number;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setNumber(String name) {
+		this.number = number;
 	}
 
-	public Course(String name)
-	{
-		this.name = name;
-	}
 
 	@Override
 	public String toString() {
-		return "Course [id=" + id + ", name=" + name + "]";
+		return "Passport [id=" + id + ", name=" + number + "]";
 	}
 	
 	

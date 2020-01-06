@@ -3,6 +3,11 @@ package com.hare.krsna.JPAHibEx.repository;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
+
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
@@ -19,62 +24,49 @@ import com.hare.krsna.JPAHibEx.repository.CourseRespository;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes=JpaHibExApplication.class)
-class CourseRepoTest{
+class JPSQLTest{
 
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 	
 	@Autowired
-	CourseRespository courseRepo;
+	EntityManager em;
 	
 	@Test
 	public void findByIdBasicTet() {
 		
 		logger.info("Test is starting");
-		Course course = courseRepo.findById(10002l);
-		assertEquals("Hare Rama", course.getName());
-		
+		List resultList = em.createNamedQuery("query_get_all_courses").getResultList();
+			
 		logger.info("Test ran successfully");
+		logger.info(" { } ", resultList);
+	}
+	
+	
+	@Test
+	public void findByType() {
+		
+		TypedQuery <Course> query = em.createNamedQuery("query_get_all_courses", Course.class);
+		
+		
+		List<Course> listOfCrse = query.getResultList();
+			
+		logger.info("Test ran successfully");
+		logger.info(" { } ", listOfCrse);
 	}
 	
 	@Test
-	@DirtiesContext
-	public void deleteByIdTet() {
+	public void jpsqlBasics() {
 		
-		logger.info("Deletion is starting");
-		courseRepo.deleteById(10002l);
+		TypedQuery <Course> query = em.createQuery("Select c from Course c where name like 'Hare Krsna'", Course.class);
 		
-		assertNull(courseRepo.findById(10002l));
 		
+		List<Course> listOfCrse = query.getResultList();
+			
 		logger.info("Test ran successfully");
+		logger.info(" { } ", listOfCrse);
 	}
 	
-	@Test
-	@DirtiesContext
-	public void save() {
-		
-		logger.info("Save Test is starting");
-		Course course = courseRepo.findById(10003l);
-		
-		if(course !=null) {
-			course.setName("Hari Hari  bol!!!");;
-		courseRepo.save(course);
-		}
-		
-		assertEquals("Hari Hari  bol!!!", course.getName());
-		
-		
-		logger.info("Test ran successfully");
-	}
 	
-	@Test
-	@DirtiesContext
-	public void playwithEM() {
-		
-		logger.info("Playing with EM Test is starting");
-		courseRepo.playwithEM();	
-		
-		logger.info("Test ran successfully");
-	}
-
+	
 	
 }
