@@ -9,12 +9,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.hare.krsna.JPAHibEx.entity.Course;
 import com.hare.krsna.JPAHibEx.repository.CourseRespository;
+import com.hare.krsna.JPAHibEx.repository.StudRepo;
 
 @SpringBootApplication
 public class JpaHibExApplication implements CommandLineRunner {
 
 	@Autowired
-	private CourseRespository repo;
+	private StudRepo repo;
 	
 	private Logger LOGGER = LoggerFactory.getLogger(this.getClass());
 	
@@ -24,15 +25,17 @@ public class JpaHibExApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		Course course = repo.findById(10001l);
-		LOGGER.info("Course 10001 is {}", course);
-		LOGGER.info("Successfully implemented JPA with H2");
-		repo.deleteById(10001l);
-		LOGGER.info("Deleted a record");
-		repo.save(new Course("Hare Krsna"));
-		Course course2 = new Course("Hari Hari Hari Bol!!!");
-		repo.save(course2);
-		repo.playwithEM();
+//		Course course = repo.findById(10001l);
+//		LOGGER.info("Course 10001 is {}", course);
+//		LOGGER.info("Successfully implemented JPA with H2");
+//		repo.deleteById(10001l);
+//		LOGGER.info("Deleted a record");
+//		repo.save(new Course("Hare Krsna"));
+//		Course course2 = new Course("Hari Hari Hari Bol!!!");
+//		repo.save(course2);
+//		repo.playwithEM();
+		
+		repo.saveStudWithPassport();
 	}
 
 }
